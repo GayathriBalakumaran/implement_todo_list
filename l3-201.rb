@@ -33,13 +33,7 @@ class Todo
 
   def to_displayable_string
     str = " "
-    if (@due_date == Date.today - 1)
-      if (@completed == true)
-        str += "[ ] #{@text} #{@due_date}"
-      else
-        str += "[ ] #{@text} #{@due_date}"
-      end
-    elsif (@due_date == Date.today)
+    if (@due_date == Date.today)
       if (@completed == true)
         str += "[X] #{@text}"
       else
@@ -48,6 +42,7 @@ class Todo
     else
       str += "[ ] #{@text} #{@due_date}"
     end
+    return str
   end
 end
 
@@ -108,4 +103,3 @@ puts "\n\n"
 puts "Due Later\n"
 puts todos_list.due_later.to_displayable_list
 puts "\n\n"
-# bangs
